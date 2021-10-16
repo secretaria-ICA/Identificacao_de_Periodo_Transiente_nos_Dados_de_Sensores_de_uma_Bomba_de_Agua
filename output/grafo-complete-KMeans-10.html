@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 750px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "red", "id": 7, "label": 7, "shape": "dot"}, {"color": "blue", "id": 2, "label": 2, "shape": "dot"}, {"color": "blue", "id": 4, "label": 4, "shape": "dot"}, {"color": "red", "id": 3, "label": 3, "shape": "dot"}, {"color": "blue", "id": 6, "label": 6, "shape": "dot"}, {"color": "blue", "id": 5, "label": 5, "shape": "dot"}, {"color": "blue", "id": 9, "label": 9, "shape": "dot"}, {"color": "red", "id": 8, "label": 8, "shape": "dot"}, {"color": "blue", "id": 1, "label": 1, "shape": "dot"}, {"color": "red", "id": 0, "label": 0, "shape": "dot"}]);
+        edges = new vis.DataSet([{"arrows": "to", "from": 0, "title": 16, "to": 2}, {"arrows": "to", "from": 0, "title": 1, "to": 3}, {"arrows": "to", "from": 0, "title": 76, "to": 4}, {"arrows": "to", "from": 0, "title": 474, "to": 5}, {"arrows": "to", "from": 0, "title": 1, "to": 8}, {"arrows": "to", "from": 0, "title": 3, "to": 9}, {"arrows": "to", "from": 1, "title": 2, "to": 5}, {"arrows": "to", "from": 1, "title": 11, "to": 8}, {"arrows": "to", "from": 2, "title": 16, "to": 0}, {"arrows": "to", "from": 2, "title": 6, "to": 3}, {"arrows": "to", "from": 2, "title": 5, "to": 4}, {"arrows": "to", "from": 2, "title": 32, "to": 5}, {"arrows": "to", "from": 2, "title": 43, "to": 7}, {"arrows": "to", "from": 3, "title": 2, "to": 0}, {"arrows": "to", "from": 3, "title": 8, "to": 2}, {"arrows": "to", "from": 3, "title": 17, "to": 5}, {"arrows": "to", "from": 3, "title": 5, "to": 6}, {"arrows": "to", "from": 3, "title": 6, "to": 7}, {"arrows": "to", "from": 4, "title": 74, "to": 0}, {"arrows": "to", "from": 4, "title": 6, "to": 2}, {"arrows": "to", "from": 4, "title": 25, "to": 5}, {"arrows": "to", "from": 4, "title": 4, "to": 7}, {"arrows": "to", "from": 4, "title": 9, "to": 9}, {"arrows": "to", "from": 5, "title": 477, "to": 0}, {"arrows": "to", "from": 5, "title": 2, "to": 1}, {"arrows": "to", "from": 5, "title": 30, "to": 2}, {"arrows": "to", "from": 5, "title": 17, "to": 3}, {"arrows": "to", "from": 5, "title": 23, "to": 4}, {"arrows": "to", "from": 5, "title": 1, "to": 6}, {"arrows": "to", "from": 5, "title": 16, "to": 7}, {"arrows": "to", "from": 5, "title": 7, "to": 9}, {"arrows": "to", "from": 6, "title": 5, "to": 3}, {"arrows": "to", "from": 6, "title": 1, "to": 5}, {"arrows": "to", "from": 7, "title": 41, "to": 2}, {"arrows": "to", "from": 7, "title": 8, "to": 3}, {"arrows": "to", "from": 7, "title": 3, "to": 4}, {"arrows": "to", "from": 7, "title": 16, "to": 5}, {"arrows": "to", "from": 7, "title": 8, "to": 9}, {"arrows": "to", "from": 8, "title": 8, "to": 1}, {"arrows": "to", "from": 8, "title": 28, "to": 9}, {"arrows": "to", "from": 9, "title": 2, "to": 0}, {"arrows": "to", "from": 9, "title": 3, "to": 1}, {"arrows": "to", "from": 9, "title": 1, "to": 2}, {"arrows": "to", "from": 9, "title": 1, "to": 3}, {"arrows": "to", "from": 9, "title": 12, "to": 4}, {"arrows": "to", "from": 9, "title": 6, "to": 5}, {"arrows": "to", "from": 9, "title": 6, "to": 7}, {"arrows": "to", "from": 9, "title": 24, "to": 8}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
