@@ -36,13 +36,14 @@ O objetivo deste trabalho é utilizar métodos de clusterização como uma ferra
 
 A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *Pump sensor data for predictive maintenance* [link](https://www.kaggle.com/nphantawee/pump-sensor-data). Possui 220.320 registros de estados de funcionamento de uma bomba de água de abastecimento de uma cidade. Existem apenas 7 registros de falh, como é tipico neste tipo de problema. os atributos são: 
 * **Timestamp:** Data, hora, minuto e segundo relativo aos dados. A coleta dos dados foi feita a cada 1 minuto. 
-* **52 sensores:**: Valores de 52 sensores nesta bomba animizados; 
+* **52 sensores:**: Valores de 52 sensores nesta bomba anonimizados.
 * **machine status:** Status de funcioanmento da máquina com os valores NORMAL, RECOVERING e **BROKEN**. No estudo os valores com RECOVERING foram considerados como de funcionamento normal.  
 
 
 
 ## 3. Modelagem
 
+Na modelagem foi utilizada a linguagem python com a tulização, principalmente, das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis.
 
 
 ### 4. Resultados
