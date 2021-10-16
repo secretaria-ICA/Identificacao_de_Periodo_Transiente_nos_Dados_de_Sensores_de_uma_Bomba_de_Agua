@@ -11,8 +11,8 @@
 Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
 
 
-- [Código da Modelagem do Problema](Clustering Pump Sensor Data.ipynb.ipynb).
-- [Código da Análise de Resultados](Results Analysis.ipynb).
+- [Código da Modelagem do Problema](Clustering_Pump_Sensor_Data.ipynb).
+- [Código da Análise de Resultados](Results_Analysis.ipynb).
 
 
 ---
@@ -43,9 +43,12 @@ A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *P
 
 ## 3. Modelagem
 
-Na modelagem foi utilizada a linguagem python com a tulização, principalmente, das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis.
+Na modelagem foi utilizada a linguagem python com a tulização, principalmente, das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis. Há comentários descrevendo o processo de modelagem no [notebook](Clustering_Pump_Sensor_Data.ipynb.ipynb") com código fonte. 
 
-Na análise exploratória 
+Na análise exploratória foi verificada a presença de valores ausentes, onde foi feito o tratamento de substituí-los pela média. Foi verificado tambpem que o sensor 15 não possui valores e ele foi excluído do modelo. O atributo timestamp também foi removido porem a ordem de ocorrencia foi mantida para utilizar os dados como uma sequencia no modelo. 
+Foi verificada que existe correlação por blocos entre os sensores. Como os sensores estão anonimizados, não é possível tentar encontrar alguma lógica na relação entre eles. Em um trabalho futuro pode ser interessante dividir a base de dados em duas e montar dois modelos utilizando somente os atributos com maior correlação.
+
+
 
 ### 4. Resultados
 
