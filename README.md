@@ -18,11 +18,11 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 ---
 
 
-### Resumo
+## Resumo
 
 
 
-### 1. Introdução
+## 1. Introdução
 
 O monitoramento preditivo de equipamentos críticos em uma indústria é um processo importante para a continuidade da operação. Quanto mais cedo for possível prever que um equipamento vai falhar, mais tempo as equipes de manutenção tem para impedir que a falha ocorra. É um tema que tem sido objeto de estudo de utilização de aplicação de algoritmos de aprendizado de máquina pois tem potencial de redução de custo de manutenção e, principalmente, diminuir as paradas não programadas na linha de produção. 
 A aplicação de métodos de aprendizado de máquina supervisionado é difícil neste tipo de problema porque rotular os dados é uma atividade complexa e de custo alto. Outro problema é que os equipamentos falham pouco e dificilmente será possível obter um rótulos de falhas para todos os problemas possíveis de ocorrer com um equipamento. 
@@ -32,7 +32,7 @@ Na rotualação dos dados neste tipo de problema, mais importante que o rótular
 O objetivo deste trabalho é utilizar métodos de clusterização como uma ferramenta de suporte ao especialista na análise de períodos transientes. 
 
 
-### 2. Descrição dos dados
+## 2. Descrição dos dados
 
 A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *Pump sensor data for predictive maintenance* [link](https://www.kaggle.com/nphantawee/pump-sensor-data). Possui 220.320 registros de estados de funcionamento de uma bomba de água de abastecimento de uma cidade. Existem apenas 7 registros de falh, como é tipico neste tipo de problema. os atributos são: 
 * **Timestamp:** Data, hora, minuto e segundo relativo aos dados. A coleta dos dados foi feita a cada 1 minuto. 
@@ -41,7 +41,7 @@ A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *P
 
 
 
-### 3. Modelagem
+## 3. Modelagem
 
 
 
