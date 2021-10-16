@@ -45,6 +45,7 @@ A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *P
 
 Na modelagem foi utilizada a linguagem python com a tulização, principalmente, das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis.
 
+Na análise exploratória 
 
 ### 4. Resultados
 
