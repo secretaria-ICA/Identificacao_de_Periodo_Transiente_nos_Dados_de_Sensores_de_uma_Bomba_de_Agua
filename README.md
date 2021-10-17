@@ -125,8 +125,7 @@ O algoritmo Mean Shift foi escolhido para o teste de um algoritmo que não é ne
 ##### bandwidth=0,01. Número de clusters=39450
 ![b01](output/MeanShift-01.png)
 
-texto
-
+A seguir, os grafos para cada um dos testes realizados. 
 
 ##### Grafo Mean Shift bandwidth=0,175. [Link](output/grafo-pca-MeanShift-175.html)
 ![b175](output/grafoMeanShift175.PNG)
@@ -137,6 +136,14 @@ texto
 ##### Grafo Mean Shift bandwidth=0,01. [Link](output/grafo-pca-MeanShift-01.html)
 ![b175](output/grafoMeanShift01.PNG)
 
+Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster representativo de período transiente. Com o parãmetro 0,05 e 794 clusters gerados foram identificadas duas situações mostradas nas imagens a seguir. 
+
+
+##### Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
+![k100](output/AnaliseGrafoMeanshift05.png )
+
+##### Análise Grafo Mean Shift bandwidth=0,05. Situação 2 
+![k100](output/AnaliseGrafoMeanshift05-2.png )
 
 ### 5. Conclusão
 
