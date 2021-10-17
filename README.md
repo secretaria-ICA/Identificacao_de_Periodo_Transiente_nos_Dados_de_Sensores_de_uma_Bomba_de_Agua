@@ -94,22 +94,49 @@ Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós repre
 
 Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue isolar os registros de falha, como pode ser visto nas figuras com os grafos nas imagens a seguir. 
 
-##### Grafo K-Means com k=10
+##### Grafo K-Means com k=10. [Link](output/grafo-pca-KMeans-10.html)
 ![k100](output/grafoKMeans10-pca.PNG)
 
-##### Grafo K-Means com k=100
+##### Grafo K-Means com k=100. [Link](output/grafo-pca-KMeans-100.html)
 ![k100](output/grafoKMeans100-pca.PNG)
 
-##### Grafo K-Means com k=200
+##### Grafo K-Means com k=200. [Link](output/grafo-pca-KMeans-200.html)
 ![k100](output/grafoKMeans200-pca.PNG)
 
-Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster onde houve falha 32. Isto faz deste cluster um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois tambepm clusters são transientes candidatos e neste segundo caso com potencial de antecipar até em dois passos a falha. 
+Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster onde houve falha 32. Isto faz deste cluster um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois tambepm clusters são transientes candidatos e neste segundo caso com potencial de antecipar em até dois clusters a falha. 
 
 ##### Análise Grafo K-Means com k=100
 ![k100](output/AnaliseGrafoKMeans100.png )
 
 ##### Análise Grafo K-Means com k=200
 ![k100](output/AnaliseGrafoKMeans200.png )
+
+
+#### Mean Shift
+
+O algoritmo Mean Shift foi escolhido para o teste de um algoritmo que não é necessária a escolha do número de clusters previamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters. 
+
+##### bandwidth=0,175. Número de clusters=60
+![b175](output/MeanShift-175.png)
+
+##### bandwidth=0,05. Número de clusters=794 
+![b05](output/MeanShift-05.png)
+
+##### bandwidth=0,01. Número de clusters=39450
+![b01](output/MeanShift-01.png)
+
+texto
+
+
+##### Grafo Mean Shift bandwidth=0,175. [Link](output/grafo-pca-MeanShift-175.html)
+![b175](output/grafoMeanShift175.PNG)
+
+##### Grafo Mean Shift bandwidth=0,05. [Link](output/grafo-pca-MeanShift-05.html)
+![b175](output/grafoMeanShift05.PNG)
+
+##### Grafo Mean Shift bandwidth=0,01. [Link](output/grafo-pca-MeanShift-01.html)
+![b175](output/grafoMeanShift01.PNG)
+
 
 ### 5. Conclusão
 
