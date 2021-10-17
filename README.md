@@ -48,6 +48,19 @@ Na modelagem foi utilizada a linguagem python com a tulização, principalmente,
 Na análise exploratória foi verificada a presença de valores ausentes, onde foi feito o tratamento de substituí-los pela média. Foi verificado tambpem que o sensor 15 não possui valores e ele foi excluído do modelo. O atributo timestamp também foi removido porem a ordem de ocorrencia foi mantida para utilizar os dados como uma sequencia no modelo. 
 Foi verificada que existe correlação por blocos entre os sensores. Como os sensores estão anonimizados, não é possível tentar encontrar alguma lógica na relação entre eles. Em um trabalho futuro pode ser interessante dividir a base de dados em duas e montar dois modelos utilizando somente os atributos com maior correlação.
 
+No tratamento dos dados foi realizada a normalização dos valores e também a redução de dimensinalidade com PCA. O conjunto de dados foi reduzido aos 3 componetes principais. 
+
+Foram testados dois algoritmos de clusterização K-Means e Meanshift com variações nos parâmentros de entrada. A ideia é fazer com que cada cluster represente um estado de funcionamento do equipamento. Foi utilizada a biblioteca scikit-learn onde é possível encontrar um bom material prático sobre o funcionamento dos algoritmos ([link](https://scikit-learn.org/stable/modules/clustering.html)). 
+
+O algoritmo **K-Means** agrupa os dados tentando separar amostras em **k** grupos de variância igual, minimizando a inércia (soma dos quadrados dentro do cluster). Este algoritmo requer que o número de clusters seja especificado, parâmentro **k**. Ele se adapta bem a um grande número de amostras como é nosso caso de estudo. Foram testados os parâmetros **k** 10, 100 e 200.  Além da variação do **k**, o algoritmo foi testado com o conjunto de dados completo, sem a redução de dimensionalidade. 
+
+O algoritmo **MeanShift** procura descobrir bolhas em uma densidade uniforme de amostras. É um algoritmo baseado em centróide, que funciona atualizando candidatos a centróides para serem a média dos pontos dentro de uma determinada região. O algoritmo define automaticamente o número de clusters com a configfuração do parâmetro bandwidth  (largura de banda) que determina o tamanho da região a ser pesquisada. É possível que o parâmetro seja estimado, porém neste trabalho os valores foram determinados manualemnte para avaliar o impacto da variação do parâmetro no número de clusters. Foram utilizados os valores 0,175, 0,05 e 0,01 nos testes. o número de clusters é mostrado na tabela a seguir. 
+
+Bandwidth | Número de clusters
+------------ | -------------
+0,175 | 60
+0,05 | 794
+0,01 | 39450
 
 
 ### 4. Resultados
