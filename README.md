@@ -103,7 +103,7 @@ Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é 
 ##### Grafo K-Means com k=200
 ![k100](output/grafoKMeans200-pca.PNG)
 
-Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, 
+Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster onde houve falha 32. Isto faz deste cluster um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois tambepm clusters são transientes candidatos e neste segundo caso com potencial de antecipar até em dois passos a falha. 
 
 ##### Análise Grafo K-Means com k=100
 ![k100](output/AnaliseGrafoKMeans100.png )
