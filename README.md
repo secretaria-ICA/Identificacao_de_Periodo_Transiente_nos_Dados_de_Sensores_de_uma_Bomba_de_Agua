@@ -67,12 +67,53 @@ Bandwidth | Número de clusters
 
 #### K-Means
 
-O algoritmo K-Means foi testado com a base de dados antes da redução de dimensionalidade e após a redução de dimensionalidade. Avaliando o gráfico em 3d 
+O algoritmo K-Means foi testado com a base de dados antes da redução de dimensionalidade e após a redução de dimensionalidade. Avaliando o gráfico em 3d, ondes os eixos são os valores dos componentes principais e as cores representam cos clusters resultados do algoritmo, é possível notar uma grande proximidade entre os resultados antes e após a redução de dimensionalidade em cada variação do parâmetro k. 
 
+##### k=10 antes da redução de dimensionalidade
+![k10](output/KMeans-10.png)
 
+##### k=10 depois da redução de dimensionalidade
+![k10](output/KMeans-10-pca.png)
 
+##### k=100 antes da redução de dimensionalidade
+![k100](output/KMeans-100.png)
+
+##### k=100 depois da redução de dimensionalidade
+![k100](output/KMeans-100-pca.png)
+
+##### k=200 antes da redução de dimensionalidade
+![k200](output/KMeans-200.png)
+
+##### k=200 depois da redução de dimensionalidade
+![k200](output/KMeans-200-pca.png)
+
+Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós representam os clusters obtidos nos algoritmos e as arestas simbolizam uma mudança de um cluster para o outro. Por exemplo, na imagem a seguir há uma aresta partindo do nó 10 para o nó 7, o que significa que na sequencia dos dados, houve uma transição do cluster 10 para o cluster 7. Na aresta foi incluído um contador da quantidade que a transição entre os cluster ocorreu, no caso do exemplo, oorreu 1 vez. Os nós vermelhos simbolizam clusters com status de falha. Na pasta [output](output) há um conjunto de arquivos html onde é possível navegar pelos grafos obtidos. 
+
+##### Exemplo de grafo com o resultado de um algoritmo de clusterização. 
+![Exemplografo](output/exemploGrafo.png)
+
+Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue isolar os registros de falha, como pode ser visto nas figuras com os grafos nas imagens a seguir. 
+
+##### Grafo K-Means com k=10
+![k100](output/grafoKMeans10-pca.PNG)
+
+##### Grafo K-Means com k=100
+![k100](output/grafoKMeans100-pca.PNG)
+
+##### Grafo K-Means com k=200
+![k100](output/grafoKMeans200-pca.PNG)
+
+Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, 
+
+##### Análise Grafo K-Means com k=100
+![k100](output/AnaliseGrafoKMeans100.png )
+
+##### Análise Grafo K-Means com k=200
+![k100](output/AnaliseGrafoKMeans200.png )
 
 ### 5. Conclusão
+
+
 
 
 
