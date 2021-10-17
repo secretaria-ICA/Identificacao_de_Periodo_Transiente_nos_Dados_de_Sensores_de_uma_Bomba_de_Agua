@@ -136,7 +136,7 @@ A seguir, os grafos para cada um dos testes realizados.
 ##### Grafo Mean Shift bandwidth=0,01. [Link](output/grafo-pca-MeanShift-01.html)
 ![b175](output/grafoMeanShift01.PNG)
 
-Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster representativo de período transiente. Com o parãmetro 0,05 e 794 clusters gerados foram identificadas duas situações mostradas nas imagens a seguir. 
+Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster representativo de período transiente. Com o parãmetro 0,05 e 794 clusters gerados foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o nó de falha 414 e na situação 2 o 566 precede o 486. 
 
 
 ##### Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
@@ -144,6 +144,9 @@ Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de
 
 ##### Análise Grafo Mean Shift bandwidth=0,05. Situação 2 
 ![k100](output/AnaliseGrafoMeanshift05-2.png )
+
+
+A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450 clusters. O grafo gerado é inviável de ser análisado por uma pessoa mas pode conter um nível de detalhe útil para ser analisado por outros algoritmos de machine learning. Poderia ser incluído neste grafo outras informações do processo de manutenção, tais como registros de manutenções realizadas ou comentários das equipes de manutenção sobre as condições do equipamento. O grafo seria a ligação entre uma condição operacional e outras informações sobre o equipamento. 
 
 ### 5. Conclusão
 
