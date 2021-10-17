@@ -1,4 +1,4 @@
-# Clusterização de Dados de Sensores de Bomba
+# Idenitificação de Período Transiente nos Dados de Sensores de uma Bomba de Água com Algoritmos de Clusterização
 
 
 #### Aluno: [Hadriel Toledo Lima](https://github.com/hadriellima)
@@ -152,7 +152,7 @@ A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450
 
 ### 5. Conclusão
 
-
+Este trabalho mostrou como a clusterização de dados 
 
 
 
