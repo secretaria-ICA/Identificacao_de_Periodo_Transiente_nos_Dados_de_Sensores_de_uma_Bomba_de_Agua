@@ -19,6 +19,7 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 
 
 ### Resumo
+O monitoramento preditivo de equipamentos críticos em uma indústria é um processo importante para a continuidade da operação. Quanto mais cedo for possível prever uma falha, mais tempo as equipes de manutenção tem para impedir que o problema. Há um potencial de retorno financeito alto em antecipar o diagnóstico de falha, seja na redução de custo em manutenção ou na diminuição de paradas não programadas. É um grande desafio rotular os dados neste tipo de problema, tanto para os períodos de falha quanto para os pré-falha, ou seja, os períodos em que o equiamento ainda não falhou mas o processo de falha já iniciou. Estas fatias de tempo nos dados chamamos de período transiente. Neste trabalho será mostrado como a utilização de algoritmos de clusterização podem ser utilizados para auxílio na indentificão de períodos transientes nos dados de operação de uma bomba de abastecimento de água de uma cidade. 
 
 
 
@@ -30,7 +31,7 @@ Um dos grandes desafios nesse problema é que rotular os dados é uma atividade 
 
 Diante desse cenário tem sido muito utilizado algoritimos de detecção de anomalia onde o modelo busca representar o estado de funcionamento normal do equipamento e considera como falha os estados de funcionamento fora do padrão representado no modelo. Como primeira abordagem para o problema é um excelente método pois é uma proposta mais rápida e barata de ser construída e agrega valor ao processo de manutenção, porém o algoritmo não será capaz de diagnostivar qual tipo de falha vai ocorrer.  
 
-Em uma industria que possui o processo de detecção de anomalia funcionando e com bons resultados, a prescrição antecipada do evento que vai ocorrer se torna um passo natural no processo de evolução da tecnologia. Neste cenário a necessidade por rotualar os dados dos eventos de falhas ocorridos se torna algo necessário. É valido ressaltar que o objetivo do trabalho é antecipar o diagnóstico de falha, e para isto, mais importante que rotular o momento que a falha ocorreu, é a identificação do período em que o processo de falha iniciou, chamado de período transiente. 
+Em uma industria que possui o processo de detecção de anomalia funcionando e com bons resultados, a prescrição antecipada do evento que vai ocorrer se torna um passo natural no processo de evolução da tecnologia. Neste cenário a necessidade por rotular os dados dos eventos de falhas ocorridos se torna algo necessário. É valido ressaltar que o objetivo do trabalho é antecipar o diagnóstico de falha, e para isto, mais importante que rotular o momento em que a falha ocorreu, é a identificação do período pré-falha, período em que o equiamento ainda não falhou mas o processo de falha já iniciou. Esta fatia de tempo nos dados chamamos de período transiente. 
 
 O objetivo deste trabalho é verificar se algoritmos de clusterização podem ser uma ferramenta útil no processo de identificação dos períodos transientes nos dados de um equipamento com monitoramento em tempo real. Foi utilizado dados de uma bomba de água de abastecimento de uma cidade. 
 
