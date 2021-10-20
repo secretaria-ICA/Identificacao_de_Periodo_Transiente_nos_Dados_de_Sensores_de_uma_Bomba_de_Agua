@@ -70,7 +70,7 @@ Bandwidth | Número de clusters
 
 #### K-Means
 
-O algoritmo K-Means foi testado com a base de dados antes da redução de dimensionalidade e após a redução de dimensionalidade. Avaliando o gráfico em 3d, ondes os eixos são os valores dos componentes principais e as cores representam cos clusters resultados do algoritmo, é possível notar uma grande proximidade entre os resultados antes e após a redução de dimensionalidade em cada variação do parâmetro k. 
+O algoritmo K-Means foi testado com a base de dados antes e após a redução de dimensionalidade. Avaliando o gráfico em 3d, ondes os eixos são os valores dos componentes principais e as cores representam os clusters indicados pelo algoritmo, é possível notar uma grande proximidade entre os resultados antes e após a aplicação do PCA em cada variação do parâmetro k. 
 
 ##### k=10 antes da redução de dimensionalidade
 ![k10](output/KMeans-10.png)
@@ -90,12 +90,12 @@ O algoritmo K-Means foi testado com a base de dados antes da redução de dimens
 ##### k=200 depois da redução de dimensionalidade
 ![k200](output/KMeans-200-pca.png)
 
-Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós representam os clusters obtidos nos algoritmos e as arestas simbolizam uma mudança de um cluster para o outro. Por exemplo, na imagem a seguir há uma aresta partindo do nó 10 para o nó 7, o que significa que na sequencia dos dados, houve uma transição do cluster 10 para o cluster 7. Na aresta foi incluído um contador da quantidade que a transição entre os cluster ocorreu, no caso do exemplo, oorreu 1 vez. Os nós vermelhos simbolizam clusters com status de falha. Na pasta [output](output) há um conjunto de arquivos html onde é possível navegar pelos grafos obtidos. 
+Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós representam os clusters obtidos nos algoritmos e as arestas simbolizam uma mudança de um cluster para o outro. Por exemplo, na imagem a seguir há uma aresta partindo do nó 10 para o nó 7, o que significa que na sequencia dos dados houve uma transição do cluster 10 para o cluster 7. Na aresta foi incluído um contador da quantidade de vezes que a transição entre os clusters ocorreu. No caso do exemplo ocorreu 1 vez. Os nós vermelhos simbolizam clusters com status de falha. Na pasta [output](output) há um conjunto de arquivos html onde é possível navegar pelos grafos gerados. 
 
 ##### Exemplo de grafo com o resultado de um algoritmo de clusterização. 
 ![Exemplografo](output/exemploGrafo.png)
 
-Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue isolar os registros de falha, como pode ser visto nas figuras com os grafos nas imagens a seguir. 
+Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue um resultado melhor, como pode ser visto nas imagens com os grafos a seguir. 
 
 ##### Grafo K-Means com k=10. [Link](output/grafo-pca-KMeans-10.html)
 ![k100](output/grafoKMeans10-pca.PNG)
@@ -106,7 +106,7 @@ Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é 
 ##### Grafo K-Means com k=200. [Link](output/grafo-pca-KMeans-200.html)
 ![k100](output/grafoKMeans200-pca.PNG)
 
-Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os valores 100 e 200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster onde houve falha 32. Isto faz deste cluster um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois tambepm clusters são transientes candidatos e neste segundo caso com potencial de antecipar em até dois clusters a falha. 
+Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os parâmetros k=100 e k=200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster 32 onde houve falha. Isto faz do cluster 13 um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois clusters também são transientes candidatos com potencial de antecipar em até dois clusters a falha. 
 
 ##### Análise Grafo K-Means com k=100
 ![k100](output/AnaliseGrafoKMeans100.png )
@@ -117,7 +117,7 @@ Mesmo com a dificuldade na escolha de k foi possível identificar a situação b
 
 #### Mean Shift
 
-O algoritmo Mean Shift foi escolhido para o teste de um algoritmo que não é necessária a escolha do número de clusters previamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters. 
+O algoritmo Mean Shift foi escolhido por não ser necessária a escolha do número de clusters antecipadamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters para cada parâmetro bandwidth. 
 
 ##### bandwidth=0,175. Número de clusters=60
 ![b175](output/MeanShift-175.png)
@@ -139,7 +139,7 @@ A seguir, os grafos para cada um dos testes realizados.
 ##### Grafo Mean Shift bandwidth=0,01. [Link](output/grafo-pca-MeanShift-01.html)
 ![b175](output/grafoMeanShift01.PNG)
 
-Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster representativo de período transiente. Com o parãmetro 0,05 e 794 clusters gerados foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o nó de falha 414 e na situação 2 o 566 precede o 486. 
+Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster candidato a período transiente. Com o parãmetro 0,05 e 794 clusters gerados, foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o cluster de falha 414 e na situação 2 o cluster 566 precede o 486. 
 
 
 ##### Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
@@ -149,15 +149,15 @@ Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de
 ![k100](output/AnaliseGrafoMeanshift05-2.png )
 
 
-A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450 clusters. O grafo gerado é inviável de ser análisado por uma pessoa mas pode conter um nível de detalhe útil para ser analisado por outros algoritmos de machine learning. Poderia ser incluído neste grafo outras informações do processo de manutenção, tais como registros de manutenções realizadas ou comentários das equipes de manutenção sobre as condições do equipamento. O grafo seria a ligação entre uma condição operacional e outras informações sobre o equipamento. 
+A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450 clusters. O grafo gerado é inviável de ser análisado por uma pessoa, mas pode conter um nível de detalhe útil para ser analisado por outros algoritmos de machine learning. Poderia ser incluído neste grafo outras informações do processo de manutenção, tais como registros de manutenções realizadas no equipamento ou comentários das equipes de manutenção. O grafo seria a ligação entre uma condição operacional e outras informações sobre o equipamento. 
 
 ### 5. Conclusão
 
-Este trabalho mostrou como a algortimos de clusterização podem ser uma ferramenta de apoio no processo de identificação dos períodos transientes nos dados de um equipamento. Embora os resultados da clusterização tenha bastante espaço para melhoria, o processo de obtenção dos clusters e a montagem do grafo de transição entre os estados de operação tem potencial de ajudar o especialista na difícil e cara tarefa de rotular os dados. 
+Este trabalho mostrou como a algortimos de clusterização podem ser uma ferramenta de apoio no processo de identificação dos períodos transientes nos dados de operação de uma bomba de abastecimento de água de uma cidade. Embora seja possível melhorar bastante os resultados da clusterização, o processo de obtenção dos clusters e a montagem do grafo de transição entre os estados de operação tem potencial de ajudar o especialista na difícil e cara tarefa de rotular os dados. 
 
-Existem algumas oportunidades de trabalhos futuros dando continuidade a este estudo. A primeira e mais natural é continuar testes com outros algoritmos de clusterização para melhorar o resultado obtido até aqui. Métodos evoltuivos de clusterização poderia ser uma abordagem interessante. Como novas condições de operação podem ocorrer mesmo após muito tempo de operação de um equipamento, este tipo de algoritmo tem potencial de resultados melhores.
+Existem algumas oportunidades de trabalhos futuros para dar continuidade a este estudo. A primeira e mais natural, é continuar testes com outros algoritmos de clusterização. Métodos evoltuivos de clusterização poderiam ser uma abordagem interessante. Como novas condições de operação podem ocorrer mesmo após muito tempo de operação de um equipamento, este tipo de algoritmo tem potencial de bons resultados.
 
-O grafo gerado como resultado da clusterização tem poder de representar a transição entre as condições operacionais do equipamento. Esse grafo pode ser utilizado como entrada para outros algortitmos de aprendizado de máquina. Relacionar as condições operacionais de um equipamento com dados de manutenções realizadas, trocas de peças, comentários das equipes de manutenção, estoque de sobressalentes ou qualquer outra informação sobre aquele equipamento tem potencial de ser o ponto de partida para várias outras análises que atualmente parecem extremamente distantes, como, por exemplo, ressuprimento de sobressalentes e abertura de ordens de manutenção automáticas baseadas na condição do equipamento. 
+O grafo gerado como resultado da clusterização tem poder de representar a transição entre as condições operacionais do equipamento. Esse grafo pode ser utilizado como entrada para outros algortitmos de aprendizado de máquina. Relacionar as condições operacionais de um equipamento com dados de manutenções realizadas, trocas de peças, comentários das equipes de manutenção, estoque de sobressalentes ou qualquer outra informação sobre o equipamento, tem potencial de ser o ponto de partida para várias outras análises que atualmente parecem extremamente distantes, como, por exemplo, ressuprimento de sobressalentes e abertura de ordens de manutenção automáticas baseadas na condição do equipamento. 
 
 
 
