@@ -29,7 +29,7 @@ O monitoramento preditivo de equipamentos críticos em uma indústria é um proc
 
 Um dos grandes desafios nesse problema é que rotular os dados é uma atividade complexa e de custo alto. Outro desafio é que os equipamentos falham pouco e dificilmente será possível obter rótulos de falhas para todos os problemas possíveis de ocorrer.  Isto faz com que mesmo com um investimento alto na obtenção de dados rotulados, a base resultante seria bastante desbalanceada e incompleta. 
 
-Diante desse cenário tem sido muito estudada a utilização de  algoritimos de detecção de anomalia onde o modelo busca representar o estado de funcionamento normal do equipamento e considera como falha os estados de funcionamento fora do padrão representado no modelo. Como primeira abordagem para o problema é um excelente método pois é uma proposta mais rápida e barata de ser construída e agrega valor ao processo de manutenção. Porém, o algoritmo não será capaz de diagnostivar qual tipo de falha vai ocorrer.  
+Diante desse cenário tem sido muito estudada a utilização de  algoritimos de detecção de anomalia onde o modelo busca representar o estado de funcionamento normal do equipamento e considera como falha os estados de funcionamento fora do padrão representado no modelo. Como primeira abordagem para o problema é um excelente método pois é uma proposta mais rápida e barata de ser construída e agrega valor ao processo de manutenção. Porém, o algoritmo não será capaz de diagnosticar qual tipo de falha vai ocorrer.  
 
 Em uma industria que possui a detecção de anomalia funcionando e com bons resultados, a prescrição antecipada do evento que vai ocorrer se torna um passo natural no processo de evolução da tecnologia. Neste cenário a necessidade por rotular os dados dos eventos de falhas ocorridos se torna algo necessário. É valido ressaltar que o objetivo do trabalho é antecipar o diagnóstico de falha, e para isto, mais importante que rotular o momento em que a falha ocorreu, é a identificação do período pré-falha, período em que o equiamento ainda não falhou mas o processo de falha já iniciou. Esta fatia de tempo nos dados chamamos de período transiente. 
 
@@ -39,7 +39,7 @@ O objetivo deste trabalho é verificar se algoritmos de clusterização podem se
 
 A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *Pump sensor data for predictive maintenance* [link](https://www.kaggle.com/nphantawee/pump-sensor-data). Possui 220.320 registros de estados de funcionamento de uma bomba de água de abastecimento de uma cidade. Existem apenas 7 registros de falha, como é tipico neste tipo de problema. Os atributos são: 
 * **Timestamp:** Data, hora, minuto e segundo relativo aos dados. A coleta dos dados foi feita a cada 1 minuto. 
-* **52 sensores:**: Valores de 52 sensores nesta bomba anonimizados.
+* **52 sensores:** Valores de 52 sensores nesta bomba anonimizados.
 * **machine status:** Status de funcioanmento da máquina com os valores NORMAL, RECOVERING e **BROKEN**. No estudo os valores com RECOVERING foram considerados como funcionamento normal.  
 
 
@@ -48,7 +48,7 @@ A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *P
 
 Na modelagem foi utilizada a linguagem python com a utilização, principalmente, das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis. Há comentários descrevendo o processo de modelagem no [notebook](Clustering_Pump_Sensor_Data.ipynb.ipynb") com código fonte. 
 
-Na análise exploratória foi verificada a presença de valores ausentes, onde foi feito o tratamento de substituí-los pela média. Foi verificado tambpem que o sensor 15 não possui valores e ele foi excluído do modelo. O atributo timestamp também foi removido porem a ordem de ocorrencia foi mantida para utilizar os dados como uma sequencia no modelo. 
+Na análise exploratória foi verificada a presença de valores ausentes, onde foi feito o tratamento de substituí-los pela média. Foi verificado tambem que o sensor 15 não possui valores e ele foi excluído do modelo. O atributo timestamp também foi removido porem a ordem de ocorrencia foi mantida para utilizar os dados como uma sequencia no modelo. 
 Foi verificada que existe correlação por blocos entre os sensores. Como os sensores estão anonimizados, não é possível tentar encontrar alguma lógica na relação entre eles. Em um trabalho futuro pode ser interessante dividir a base de dados em duas e montar dois modelos utilizando somente os atributos com maior correlação.
 
 No tratamento dos dados foi realizada a normalização dos valores e também a redução de dimensinalidade com PCA. O conjunto de dados foi reduzido aos 3 componetes principais. 
