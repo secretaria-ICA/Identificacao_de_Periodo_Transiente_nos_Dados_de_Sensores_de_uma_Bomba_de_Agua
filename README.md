@@ -97,13 +97,13 @@ Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós repre
 
 Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue um resultado melhor, como pode ser visto nas imagens com os grafos a seguir. 
 
-##### Grafo K-Means com k=10. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-10.html)
+##### Grafo K-Means com k=10. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-10.html)
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans10-pca.PNG)
 
-##### Grafo K-Means com k=100. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-100.html)
+##### Grafo K-Means com k=100. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-100.html)
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans100-pca.PNG)
 
-##### Grafo K-Means com k=200. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-200.html)
+##### Grafo K-Means com k=200. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-KMeans-200.html)
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans200-pca.PNG)
 
 Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os parâmetros k=100 e k=200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster 32 onde houve falha. Isto faz do cluster 13 um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois clusters também são transientes candidatos com potencial de antecipar em até dois clusters a falha. 
@@ -130,12 +130,13 @@ O algoritmo Mean Shift foi escolhido por não ser necessária a escolha do núme
 
 A seguir, os grafos para cada um dos testes realizados. 
 
-##### Grafo Mean Shift bandwidth=0,175. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-175.html)
+##### Grafo Mean Shift bandwidth=0,175. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-175.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift175.PNG)
 
+##### Grafo Mean Shift bandwidth=0,05. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-05.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift05.PNG)
 
-##### Grafo Mean Shift bandwidth=0,01. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-01.html)
+##### Grafo Mean Shift bandwidth=0,01. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-01.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift01.PNG)
 
 Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster candidato a período transiente. Com o parãmetro 0,05 e 794 clusters gerados, foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o cluster de falha 414 e na situação 2 o cluster 566 precede o 486. 
