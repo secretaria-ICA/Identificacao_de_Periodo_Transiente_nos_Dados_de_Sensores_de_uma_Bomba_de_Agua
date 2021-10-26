@@ -120,23 +120,23 @@ Mesmo com a dificuldade na escolha de k foi possível identificar a situação b
 O algoritmo Mean Shift foi escolhido por não ser necessária a escolha do número de clusters antecipadamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters para cada parâmetro bandwidth. 
 
 ##### bandwidth=0,175. Número de clusters=60
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/MeanShift-175.png)
+![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/main/output/MeanShift-175.png)
 
 ##### bandwidth=0,05. Número de clusters=794 
-![b05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/MeanShift-05.png)
+![b05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/MeanShift-05.png)
 
 ##### bandwidth=0,01. Número de clusters=39450
-![b01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/MeanShift-01.png)
+![b01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/MeanShift-01.png)
 
 A seguir, os grafos para cada um dos testes realizados. 
 
-##### Grafo Mean Shift bandwidth=0,175. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-175.html)
+##### Grafo Mean Shift bandwidth=0,175. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-175.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift175.PNG)
 
-##### Grafo Mean Shift bandwidth=0,05. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-05.html)
+##### Grafo Mean Shift bandwidth=0,05. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-05.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift05.PNG)
 
-##### Grafo Mean Shift bandwidth=0,01. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafo-pca-MeanShift-01.html)
+##### Grafo Mean Shift bandwidth=0,01. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-01.html)
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift01.PNG)
 
 Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster candidato a período transiente. Com o parãmetro 0,05 e 794 clusters gerados, foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o cluster de falha 414 e na situação 2 o cluster 566 precede o 486. 
