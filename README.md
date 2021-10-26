@@ -46,7 +46,7 @@ A base de dados escolhida para o trabalho foi encontrada no Kaggle com o nome *P
 
 ### 3. Modelagem
 
-Na modelagem foi utilizada a linguagem python com a utilização das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis. Há comentários descrevendo o processo de construção do modelo no [notebook](Clustering_Pump_Sensor_Data.ipynb.ipynb") com código fonte. 
+Na modelagem foi utilizada a linguagem python com a utilização das biblioteca scikit-learn para modelagem e para visualização dos dados, seaborn, Matplotlib e Pyvis. Há comentários descrevendo o processo de construção do modelo no [notebook](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/Clustering_Pump_Sensor_Data.ipynb) com código fonte. 
 
 Na análise exploratória foi verificada a presença de valores ausentes e por isso foi feito o tratamento de substituí-los pela média. O sensor 15 foi excluído do modelo porque não possuia valores. O atributo timestamp também foi removido porem a ordem de ocorrencia foi mantida para que os dados fossem utilizados como uma sequencia. 
 Foi verificada que existe correlação por blocos entre os sensores. Como os sensores estão anonimizados, não é possível tentar encontrar alguma lógica na relação entre eles. Em um trabalho futuro pode ser interessante dividir a base de dados em duas e montar dois modelos utilizando somente os atributos com maior correlação.
