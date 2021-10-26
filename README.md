@@ -120,33 +120,33 @@ Mesmo com a dificuldade na escolha de k foi possível identificar a situação b
 O algoritmo Mean Shift foi escolhido por não ser necessária a escolha do número de clusters antecipadamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters para cada parâmetro bandwidth. 
 
 ##### bandwidth=0,175. Número de clusters=60
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AMeanShift-175.png)
+![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AMeanShift-175.png)
 
 ##### bandwidth=0,05. Número de clusters=794 
-![b05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AMeanShift-05.png)
+![b05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AMeanShift-05.png)
 
 ##### bandwidth=0,01. Número de clusters=39450
-![b01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AMeanShift-01.png)
+![b01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AMeanShift-01.png)
 
 A seguir, os grafos para cada um dos testes realizados. 
 
 ##### Grafo Mean Shift bandwidth=0,175. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/Agrafo-pca-MeanShift-175.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AgrafoMeanShift175.PNG)
+![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AgrafoMeanShift175.PNG)
 
 ##### Grafo Mean Shift bandwidth=0,05. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/Agrafo-pca-MeanShift-05.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AgrafoMeanShift05.PNG)
+![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AgrafoMeanShift05.PNG)
 
 ##### Grafo Mean Shift bandwidth=0,01. [Link](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/Agrafo-pca-MeanShift-01.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AgrafoMeanShift01.PNG)
+![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AgrafoMeanShift01.PNG)
 
 Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster candidato a período transiente. Com o parãmetro 0,05 e 794 clusters gerados, foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o cluster de falha 414 e na situação 2 o cluster 566 precede o 486. 
 
 
 ##### Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AAnaliseGrafoMeanshift05.png )
+![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AAnaliseGrafoMeanshift05.png )
 
 ##### Análise Grafo Mean Shift bandwidth=0,05. Situação 2 
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AAnaliseGrafoMeanshift05-2.png )
+![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoMeanshift05-2.png )
 
 
 A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450 clusters. O grafo gerado é inviável de ser análisado por uma pessoa, mas pode conter um nível de detalhe útil para ser analisado por outros algoritmos de machine learning. Poderia ser incluído neste grafo outras informações do processo de manutenção, tais como registros de manutenções realizadas no equipamento ou comentários das equipes de manutenção. O grafo seria a ligação entre uma condição operacional e outras informações sobre o equipamento. 
