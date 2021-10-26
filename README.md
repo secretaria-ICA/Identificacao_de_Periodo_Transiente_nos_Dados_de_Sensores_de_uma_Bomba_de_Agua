@@ -103,7 +103,7 @@ Grafo K-Means com k=10. [Link](https://github.com/hadriellima/Clustering-Pump-Se
 
 Grafo K-Means com k=100. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-100.html)
 
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans100-pca.PNG)
+![k100-](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans100-pca.PNG)
 
 Grafo K-Means com k=200. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-200.html)
 
@@ -112,9 +112,11 @@ Grafo K-Means com k=200. [Link](https://github.com/hadriellima/Clustering-Pump-S
 Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os parâmetros k=100 e k=200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster 32 onde houve falha. Isto faz do cluster 13 um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois clusters também são transientes candidatos com potencial de antecipar em até dois clusters a falha. 
 
 Análise Grafo K-Means com k=100
+
 ![ak100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans100.png )
 
 Análise Grafo K-Means com k=200
+
 ![ak200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans200.png )
 
 
