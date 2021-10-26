@@ -72,81 +72,89 @@ Bandwidth | Número de clusters
 
 O algoritmo K-Means foi testado com a base de dados antes e após a redução de dimensionalidade. Avaliando o gráfico em 3d, ondes os eixos são os valores dos componentes principais e as cores representam os clusters indicados pelo algoritmo, é possível notar uma grande proximidade entre os resultados antes e após a aplicação do PCA em cada variação do parâmetro k. 
 
-##### k=10 antes da redução de dimensionalidade
+k=10 antes da redução de dimensionalidade 
 ![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-10.png)
 
-##### k=10 depois da redução de dimensionalidade
+k=10 depois da redução de dimensionalidade 
 ![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-10-pca.png)
 
-##### k=100 antes da redução de dimensionalidade
+k=100 antes da redução de dimensionalidade
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-100.png)
 
-##### k=100 depois da redução de dimensionalidade
+k=100 depois da redução de dimensionalidade
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-100-pca.png)
 
-##### k=200 antes da redução de dimensionalidade
+k=200 antes da redução de dimensionalidade
 ![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-200.png)
 
-##### k=200 depois da redução de dimensionalidade
+k=200 depois da redução de dimensionalidade
 ![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/KMeans-200-pca.png)
 
 Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós representam os clusters obtidos nos algoritmos e as arestas simbolizam uma mudança de um cluster para o outro. Por exemplo, na imagem a seguir há uma aresta partindo do nó 10 para o nó 7, o que significa que na sequencia dos dados houve uma transição do cluster 10 para o cluster 7. Na aresta foi incluído um contador da quantidade de vezes que a transição entre os clusters ocorreu. No caso do exemplo ocorreu 1 vez. Os nós vermelhos simbolizam clusters com status de falha. Na pasta [output](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/tree/main/output) há um conjunto de arquivos html onde é possível navegar pelos grafos gerados. 
 
-##### Exemplo de grafo com o resultado de um algoritmo de clusterização. 
+Exemplo de grafo com o resultado de um algoritmo de clusterização. 
 ![Exemplografo](output/exemploGrafo.png)
 
 Com o algoritmo K-Means é nítido como a escolha antecipada do parâmetro k é ruim para a abordagem. Com k = 10, os registros de falha não conseguem ser isolados dos registros com funcionamento normal. Com o aumento do número de clusters, o algoritmo consegue um resultado melhor, como pode ser visto nas imagens com os grafos a seguir. 
 
-##### Grafo K-Means com k=10. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-10.html)
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans10-pca.PNG)
+Grafo K-Means com k=10. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-10.html)
 
-##### Grafo K-Means com k=100. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-100.html)
+![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans10-pca.PNG)
+
+Grafo K-Means com k=100. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-100.html)
+
 ![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans100-pca.PNG)
 
-##### Grafo K-Means com k=200. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-200.html)
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans200-pca.PNG)
+Grafo K-Means com k=200. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-KMeans-200.html)
+
+![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoKMeans200-pca.PNG)
 
 Mesmo com a dificuldade na escolha de k foi possível identificar a situação buscada neste trabalho com os parâmetros k=100 e k=200. Estas situações foram destacadas nas imagens a seguir. Com k=100, o cluster 13 precedeu o cluster 32 onde houve falha. Isto faz do cluster 13 um periodo transiente candidato. Com k=200, o cluster de falha 111, foi precedido pelos clusters 13 que por sua vez foi precedido unicamente pelo 188. Os dois clusters também são transientes candidatos com potencial de antecipar em até dois clusters a falha. 
 
-##### Análise Grafo K-Means com k=100
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans100.png )
+Análise Grafo K-Means com k=100
+![ak100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans100.png )
 
-##### Análise Grafo K-Means com k=200
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans200.png )
+Análise Grafo K-Means com k=200
+![ak200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoKMeans200.png )
 
 
 #### Mean Shift
 
 O algoritmo Mean Shift foi escolhido por não ser necessária a escolha do número de clusters antecipadamente. Foi possível notar que a quantidade de clusters gerados foi bem alta: 60, 794 e 39450 para bandwidth de 0,175, 0,05 e 0,01 respectivamente. A seguir os gráficos dos 3 componentes principais coloridos pelos clusters para cada parâmetro bandwidth. 
 
-##### bandwidth=0,175. Número de clusters=60
+bandwidth=0,175. Número de clusters=60
 ![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/MeanShift-175.png)
 
-##### bandwidth=0,05. Número de clusters=794 
+bandwidth=0,05. Número de clusters=794 
 ![b05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/MeanShift-05.png)
 
-##### bandwidth=0,01. Número de clusters=39450
+bandwidth=0,01. Número de clusters=39450
 ![b01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/MeanShift-01.png)
 
 A seguir, os grafos para cada um dos testes realizados. 
 
-##### Grafo Mean Shift bandwidth=0,175. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-175.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift175.PNG)
+Grafo Mean Shift bandwidth=0,175. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-175.html)
 
-##### Grafo Mean Shift bandwidth=0,05. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-05.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift05.PNG)
+![ab175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift175.PNG)
 
-##### Grafo Mean Shift bandwidth=0,01. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-01.html)
-![b175](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift01.PNG)
+Grafo Mean Shift bandwidth=0,05. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-05.html)
+
+![ab05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift05.PNG)
+
+Grafo Mean Shift bandwidth=0,01. [Link](https://github.com/hadriellima/Clustering-Pump-Sensors-Data/blob/main/output/grafo-pca-MeanShift-01.html)
+
+![ab01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/grafoMeanShift01.PNG)
 
 Os grafos com o algoritmo Mean Shift também mostraram caminhos interessantes de transição entre os clusters. Com o parâmetro 0,175 e 60 clusteres gerados, não foi identificado nenhum cluster candidato a período transiente. Com o parãmetro 0,05 e 794 clusters gerados, foram identificadas duas situações mostradas nas imagens a seguir. Na situação 1 o cluster transiente candidato 517 precede o cluster de falha 414 e na situação 2 o cluster 566 precede o 486. 
 
 
-##### Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoMeanshift05.png )
+Análise Grafo Mean Shift bandwidth=0,05. Situação 1 
 
-##### Análise Grafo Mean Shift bandwidth=0,05. Situação 2 
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoMeanshift05-2.png )
+![ak05](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoMeanshift05.png )
+
+Análise Grafo Mean Shift bandwidth=0,05. Situação 2 
+
+![ak01](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AnaliseGrafoMeanshift05-2.png )
 
 
 A execução do algoritmo Mean Shift com o parâmetro bandwidth=0,01 gerou 39450 clusters. O grafo gerado é inviável de ser análisado por uma pessoa, mas pode conter um nível de detalhe útil para ser analisado por outros algoritmos de machine learning. Poderia ser incluído neste grafo outras informações do processo de manutenção, tais como registros de manutenções realizadas no equipamento ou comentários das equipes de manutenção. O grafo seria a ligação entre uma condição operacional e outras informações sobre o equipamento. 
