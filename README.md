@@ -73,22 +73,22 @@ Bandwidth | Número de clusters
 O algoritmo K-Means foi testado com a base de dados antes e após a redução de dimensionalidade. Avaliando o gráfico em 3d, ondes os eixos são os valores dos componentes principais e as cores representam os clusters indicados pelo algoritmo, é possível notar uma grande proximidade entre os resultados antes e após a aplicação do PCA em cada variação do parâmetro k. 
 
 ##### k=10 antes da redução de dimensionalidade
-![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-10.png)
+![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-10.png)
 
 ##### k=10 depois da redução de dimensionalidade
-![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-10-pca.png)
+![k10](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-10-pca.png)
 
 ##### k=100 antes da redução de dimensionalidade
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-100.png)
+![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-100.png)
 
 ##### k=100 depois da redução de dimensionalidade
-![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-100-pca.png)
+![k100](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-100-pca.png)
 
 ##### k=200 antes da redução de dimensionalidade
-![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-200.png)
+![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-200.png)
 
 ##### k=200 depois da redução de dimensionalidade
-![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/1373ddb65826c8c8eea54b14bc14ad1aef7d0399/output/AKMeans-200-pca.png)
+![k200](https://raw.githubusercontent.com/hadriellima/Clustering-Pump-Sensors-Data/main/output/AKMeans-200-pca.png)
 
 Para cada conjunto de teste, foi plotado um grafo direcionado onde os nós representam os clusters obtidos nos algoritmos e as arestas simbolizam uma mudança de um cluster para o outro. Por exemplo, na imagem a seguir há uma aresta partindo do nó 10 para o nó 7, o que significa que na sequencia dos dados houve uma transição do cluster 10 para o cluster 7. Na aresta foi incluído um contador da quantidade de vezes que a transição entre os clusters ocorreu. No caso do exemplo ocorreu 1 vez. Os nós vermelhos simbolizam clusters com status de falha. Na pasta [output](output) há um conjunto de arquivos html onde é possível navegar pelos grafos gerados. 
 
