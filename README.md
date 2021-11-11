@@ -1,4 +1,4 @@
-# Identificação de Período Transiente nos Dados de Sensores de uma Bomba de Água com Algoritmos de Clusterização
+# Identificação_de_Período_Transiente_nos_Dados_de_Sensores_de_uma_Bomba_de_Água_com_Algoritmos_de_Clusterização
 
 
 #### Aluno: [Hadriel Toledo Lima](https://github.com/hadriellima)
